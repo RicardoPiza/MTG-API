@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Magic the Gathering cards search</h1>
+<h5>Card Id</h5>
+<form action="/searchById" method="post" >
+<input name="id">
+<input type="submit" value="Search Card By ID">
+</form>
+<br><br>
+<form action="/salvar" method="post" >
+
+    <input type="submit" value="Save">
+</form>
+<br><br>
+
+<table>
+
+    <tr th:each= "card : ${cards}">
+        <td>Name:</td><td th:text= "${card.name}"></td>
+    <tr th:each= "card : ${cards}">
+        <td>ID:</td><td th:text= "${card.id}"></td>
+    <tr th:each= "card : ${cards}">
+        <td>Artist:</td><td th:text= "${card.artist}"> </td>
+    <tr th:each= "color : ${colors}">
+        <td>Color:</td><td th:text= "${color}"> </td>
+    <tr th:each= "card : ${cards}">
+        <td>Type:</td><td th:text= "${card.type}"> </td>
+    <tr th:each= "card : ${cards}">
+        <td>Description:</td><td th:text= "${card.description}"> </td>
+    <tr th:each= "card : ${cards}">
+        <td>Power:</td><td th:text= "${card.power}"> </td>
+    <tr th:each= "card : ${cards}">
+        <td>Defense:</td><td th:text= "${card.def}"> </td>
+    <tr th:each= "card : ${cards}">
+        <td>Mana cost:</td><td th:text= "${card.manaCost}"> </td>
+    <tr th:each= "card : ${cards}">
+        <td>Price High:</td><td th:text= "${card.pricehigh}"> </td>
+    <tr th:each= "card : ${cards}">
+        <td>Price Mid:</td><td th:text= "${card.pricemid}"> </td>
+    <tr th:each= "card : ${cards}">
+        <td>Price High:</td><td th:text= "${card.pricelow}"> </td>
+    <tr th:each= "card : ${cards}">
+        <td>Rarity:</td><td th:text= "${card.rarity}"> </td>
+    <tr th:each= "card : ${cards}">
+        <td>Life:</td><td th:text= "${card.life}"> </td>
+    <tr th:each= "card : ${cards}">
+        <img th:src="${card.imgUrl}">
+    </tr>
+</table>
+
+</body>
+</html>

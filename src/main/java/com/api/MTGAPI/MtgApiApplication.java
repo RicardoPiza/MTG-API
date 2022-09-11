@@ -1,24 +1,23 @@
 package com.api.MTGAPI;
 
 import com.api.MTGAPI.controllers.CardController;
-import io.magicthegathering.javasdk.api.CardAPI;
-import io.magicthegathering.javasdk.resource.Card;
+import com.api.MTGAPI.repositories.CardRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
+import org.springframework.web.servlet.ModelAndView;
 
 @SpringBootApplication
 @RestController
 public class MtgApiApplication {
+	public CardRepository cardRepository;
 
 	public static void main(String[] args) {SpringApplication.run(MtgApiApplication.class, args);}
 
-
-	public Object index(){
-		return new CardController().findAll();
-	}
+//	@RequestMapping("/")
+//	public ModelAndView index(){
+//		return new ModelAndView("index");
+//	}
 
 }
