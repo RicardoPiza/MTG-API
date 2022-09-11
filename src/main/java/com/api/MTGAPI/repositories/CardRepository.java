@@ -7,6 +7,6 @@ import java.util.UUID;
 
 
 @Repository
-public interface CardRepository extends JpaRepository<CardModel, UUID> {
+public interface CardRepository extends JpaRepository<CardModel, Integer> {
 
 }

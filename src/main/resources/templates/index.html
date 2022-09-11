@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>MTG-API</title>
 </head>
 <body>
 <h1>Magic the Gathering cards search</h1>
 <h5>Card Id</h5>
 <form action="/searchById" method="post" >
 <input name="id">
-<input type="submit" value="Search Card By ID">
+<input class = "btn btn-primary" type="submit" value="Search Card By ID">
 </form>
-<br><br>
-<form action="/salvar" method="post" >
+<br>
+<form action="/save" method="post" >
+    <input class = "btn btn-primary" type="submit" value="Save">
+</form>
+<br>
+<form action="/list" method="post" >
+    <input class = "btn btn-primary" type="submit" value="List">
+</form>
 
-    <input type="submit" value="Save">
-</form>
 <br><br>
 
 <table>
@@ -51,6 +56,7 @@
     <tr th:each= "card : ${cards}">
         <img th:src="${card.imgUrl}">
     </tr>
+
 </table>
 
 </body>

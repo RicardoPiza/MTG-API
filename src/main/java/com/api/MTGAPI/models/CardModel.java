@@ -12,45 +12,45 @@ public class CardModel implements Serializable {
 
     @Id
     protected int id;
-    @Column(length = 200)
+    @Column(length = 1000)
     protected String[] colors;
-    @Column(length = 200)
+    @Column(length = 1000)
     protected String[] colorIdentity;
-    @Column(length = 200)
+    @Column(length = 1000)
     protected String name;
-    @Column(length = 200)
+    @Column(length = 1000)
     protected String artist;
-    @Column(length = 200)
+    @Column(length = 1000)
     protected String type;
-    @Column(length = 200)
+    @Column(length = 1000)
     protected String[] types;
-    @Column(length = 200)
+    @Column(length = 1000)
     protected String[] subtypes;
-    @Column(length = 200)
+    @Column(length = 1000)
     protected String imgUrl;
-    @Column(length = 200)
+    @Column(length = 1000)
     protected String set;
-    @Column(length = 200)
+    @Column(length = 1000)
     protected String setName;
-    @Column(length = 200)
+    @Column(length = 1000)
     protected String power;
-    @Column(length = 200)
+    @Column(length = 1000)
     protected String def;
-    @Column(length = 200)
+    @Column(length = 1000)
     protected String description;
-    @Column(length = 200)
+    @Column(length = 1000)
     protected String manaCost;
-    @Column(length = 200)
+    @Column(length = 1000)
     protected Double cmc;
-    @Column(length = 200)
+    @Column(length = 1000)
     protected String rarity;
-    @Column(length = 200)
+    @Column(length = 1000)
     protected int life;
-    @Column(length = 200)
+    @Column(length = 1000)
     protected BigDecimal pricehigh;
-    @Column(length = 200)
+    @Column(length = 1000)
     protected BigDecimal pricelow;
-    @Column(length = 200)
+    @Column(length = 1000)
     protected BigDecimal pricemid;
     public CardModel() {
     }
