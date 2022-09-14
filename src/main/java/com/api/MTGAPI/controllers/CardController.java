@@ -5,10 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.ArrayList;
-import java.util.UUID;
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -17,14 +15,7 @@ public class CardController {
     @Autowired
     private CardRepository cardRepository;
     public Long id;
-//    @GetMapping
-//    public ResponseEntity<List<Card>> findAll(){
-//        List<Card> list = new ArrayList<>();
-//        list.add(new Card(2));
-//        list.add(new Card(65));
-//        list.add(new Card(95));
-//        return ResponseEntity.ok().body(list);
-//    }
+
 	@RequestMapping("/")
 	public ModelAndView index(){
 		return new ModelAndView("index");
@@ -51,16 +42,17 @@ public class CardController {
         return new ModelAndView("/index");
     }
     @PostMapping(value = "list")
-    public ModelAndView listar(){
+    public ModelAndView list(){
         ArrayList <CardModel> list = (ArrayList<CardModel>) cardRepository.findAll();
         ModelAndView view = new ModelAndView();
+        view.setViewName("/list");
         view.addObject("cards", list);
         return view;
     }
-    @GetMapping("/delete/{id}")
-    public RedirectView delete(@PathVariable("id") Integer id){
-        cardRepository.deleteById(id);
-        return new RedirectView("/");
+    @GetMapping("delete")
+    public ModelAndView delete(@RequestParam("id") Long id){
+        cardRepository.deleteById(Math.toIntExact(id));
+        return list();
     }
 
 }

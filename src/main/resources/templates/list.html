@@ -5,17 +5,16 @@
     <meta charset="UTF-8">
     <title>Cards</title>
 </head>
+
 <body>
-<table>
-    <tr th:each= "card : ${cards}">
-        <td>
-            <img th:src="${card.imgUrl}">
-        </td>
-        <td>
-            <a class = "btn btn-danger" value="Delete" th:href="@{delete/{id}(id = ${card.id})}" >Delete</a>
-        </td>
-    </tr>
-</table>
+<form th:action="@{delete}" method="get">
+    <div style="display: inline" th:each= "card : ${cards}">
+        <img th:src="${card.imgUrl}">
+        <input type="hidden" th:value="${card.id}" name = "id">
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </div>
+</form>
+<a style="none" href="/" class="btn btn-danger">Return</a>
 
 </body>
 </html>
